@@ -1,6 +1,6 @@
 # GameDevelopment
 
-Class Assignment: Godot Tutorial shooter game
+Class Assignment: Godot Tutorial shooter game - https://www.youtube.com/watch?v=GwCiGixlqiU
     Added features:
         Tree spawns
         Tree removal out of frame
@@ -30,6 +30,6 @@ Class Assignment: Godot Tutorial shooter game
 9/9 : Blobs now spawn around the player randomly-(25mins)
 9/9 : Added Game over condition & screen-(10mins)
 9/9 : Added Trees loading randomly around player-(40mins)
-9/9 : Research to make += trees now Dissapear when not in frame-(45mins)
+9/9 : Research to make += trees now Dissapear when not in frame-(45mins) - https://www.youtube.com/watch?v=JZ71QSfROAs
 9/9 : Set up Github CI(I think)-(35mins)
 
