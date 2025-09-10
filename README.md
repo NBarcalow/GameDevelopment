@@ -32,4 +32,4 @@ Class Assignment: Godot Tutorial shooter game - https://www.youtube.com/watch?v=
 9/9 : Added Trees loading randomly around player-(40mins)
 9/9 : Research to make += trees now Dissapear when not in frame-(45mins) - https://www.youtube.com/watch?v=JZ71QSfROAs
 9/9 : Set up Github CI(I think)-(35mins)
-
+9/10 : Finished fixing the CL Pipe problem - it was a pathing issue in the yaml file-(2hours 5mins)
