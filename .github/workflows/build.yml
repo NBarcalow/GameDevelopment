@@ -64,7 +64,7 @@ jobs:
     # — upload artifact for Pages —
     - uses: actions/upload-pages-artifact@v3
       with:
-        path: build/web        # this becomes the Pages content
+        path: 2d-project-start\builds\web        # this becomes the Pages content
 
   # ───────────────── deploy job ─────────────────
   deploy:
