@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvwn70hglawso"]
+
+[ext_resource type="PackedScene" uid="uid://dxgtvg6iqn3pw" path="res://player.tscn" id="1_0yohk"]
+[ext_resource type="Script" uid="uid://jq0xt7vn3k6k" path="res://survivor_game.gd" id="1_xbgqq"]
+[ext_resource type="PackedScene" uid="uid://dcogxvx6fvx8g" path="res://tree.tscn" id="2_8vy7s"]
+[ext_resource type="PackedScene" uid="uid://dk222sfdfhqn7" path="res://blob.tscn" id="3_8vy7s"]
+[ext_resource type="Script" uid="uid://dk14644owfwf1" path="res://path_follow_2d.gd" id="5_qktop"]
+
+[sub_resource type="Curve2D" id="Curve2D_j2wmw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -139, -164, 0, 0, 0, 0, 2040, -150, 0, 0, 0, 0, 2050, 1182, 0, 0, 0, 0, -135, 1169, 0, 0, 0, 0, -114, -122)
+}
+point_count = 5
+
+[sub_resource type="FontFile" id="FontFile_xbgqq"]
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qktop"]
+font = SubResource("FontFile_xbgqq")
+font_size = 100
+outline_size = 10
+shadow_size = 10
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_xbgqq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1950.0
+offset_bottom = 1103.0
+
+[node name="Player" parent="." instance=ExtResource("1_0yohk")]
+position = Vector2(916, 543)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-916, -543)
+curve = SubResource("Curve2D_j2wmw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-139, -164)
+rotation = 0.00642488
+script = ExtResource("5_qktop")
+
+[node name="tree" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(233, 915)
+
+[node name="tree2" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(289, 375)
+
+[node name="tree3" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1421, 290)
+
+[node name="tree4" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1579, 679)
+
+[node name="tree5" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1409, 727)
+
+[node name="tree6" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1712, 1011)
+
+[node name="tree7" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(656, 1009)
+
+[node name="tree8" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(711, 146)
+
+[node name="tree9" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(770, 568)
+
+[node name="tree10" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1430, 529)
+
+[node name="tree11" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(1783, 178)
+
+[node name="blob" parent="." instance=ExtResource("3_8vy7s")]
+position = Vector2(336, 626)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.33
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.164706, 0.164706, 0.670588)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -67.0
+offset_right = 248.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_qktop")
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
