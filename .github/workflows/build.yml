@@ -59,6 +59,7 @@ jobs:
       run: |
         mkdir -p 2d-project-start/builds/web
         ~/godot/Godot_v${GODOT_VERSION}_linux.x86_64 --headless \
+          --path 2d-project-start \
           --export-release "${WEB_PRESET}" 2d-project-start/builds/web/index.html
 
     # — upload artifact for Pages —
