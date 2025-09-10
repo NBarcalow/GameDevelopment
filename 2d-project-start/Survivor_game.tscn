@@ -1,16 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvwn70hglawso"]
+[gd_scene load_steps=11 format=3 uid="uid://bvwn70hglawso"]
 
 [ext_resource type="PackedScene" uid="uid://dxgtvg6iqn3pw" path="res://player.tscn" id="1_0yohk"]
 [ext_resource type="Script" uid="uid://jq0xt7vn3k6k" path="res://survivor_game.gd" id="1_xbgqq"]
 [ext_resource type="PackedScene" uid="uid://dcogxvx6fvx8g" path="res://tree.tscn" id="2_8vy7s"]
 [ext_resource type="PackedScene" uid="uid://dk222sfdfhqn7" path="res://blob.tscn" id="3_8vy7s"]
 [ext_resource type="Script" uid="uid://dk14644owfwf1" path="res://path_follow_2d.gd" id="5_qktop"]
+[ext_resource type="Script" uid="uid://bmvrh4r8bgua7" path="res://tree.gd" id="6_qktop"]
 
 [sub_resource type="Curve2D" id="Curve2D_j2wmw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -139, -164, 0, 0, 0, 0, 2040, -150, 0, 0, 0, 0, 2050, 1182, 0, 0, 0, 0, -135, 1169, 0, 0, 0, 0, -114, -122)
+"points": PackedVector2Array(0, 0, 0, 0, -139, -164, 0, 0, 0, 0, 2040, -150, 0, 0, 0, 0, 2050, 1182, 0, 0, 0, 0, -135, 1169, 0, 0, 0, 0, -139, -164)
 }
 point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgqq"]
+size = Vector2(2367, 1530)
 
 [sub_resource type="FontFile" id="FontFile_xbgqq"]
 cache/0/50/0/ascent = 0.0
@@ -46,6 +50,10 @@ layer = -1
 offset_right = 1950.0
 offset_bottom = 1103.0
 
+[node name="tree" parent="." instance=ExtResource("2_8vy7s")]
+position = Vector2(233, 915)
+script = ExtResource("6_qktop")
+
 [node name="Player" parent="." instance=ExtResource("1_0yohk")]
 position = Vector2(916, 543)
 
@@ -59,43 +67,17 @@ position = Vector2(-139, -164)
 rotation = 0.00642488
 script = ExtResource("5_qktop")
 
-[node name="tree" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(233, 915)
+[node name="TreeArea" type="Area2D" parent="Player/Path2D"]
 
-[node name="tree2" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(289, 375)
-
-[node name="tree3" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1421, 290)
-
-[node name="tree4" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1579, 679)
-
-[node name="tree5" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1409, 727)
-
-[node name="tree6" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1712, 1011)
-
-[node name="tree7" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(656, 1009)
-
-[node name="tree8" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(711, 146)
-
-[node name="tree9" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(770, 568)
-
-[node name="tree10" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1430, 529)
-
-[node name="tree11" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(1783, 178)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Path2D/TreeArea"]
+unique_name_in_owner = true
+position = Vector2(955.5, 512)
+shape = SubResource("RectangleShape2D_xbgqq")
 
 [node name="blob" parent="." instance=ExtResource("3_8vy7s")]
 position = Vector2(336, 626)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerBlob" type="Timer" parent="."]
 wait_time = 0.33
 autostart = true
 
@@ -127,5 +109,9 @@ grow_vertical = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_qktop")
 
+[node name="Tree" type="Timer" parent="."]
+autostart = true
+
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerBlob" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Tree" to="." method="_on_tree_timeout"]

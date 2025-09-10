@@ -1,12 +1,5 @@
-res://player.tscn
 res://Survivor_game.tscn
-res://characters/happy_boo/happy_boo.tscn
-res://tree.tscn
-res://blob.gd
-res://blob.tscn
-res://gun.tscn
-res://gun.gd
-res://bullet.gd
-res://bullet.tscn
-res://player.gd
 res://survivor_game.gd
+res://blob.tscn
+res://player.tscn
+res://tree.tscn
