@@ -1,20 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvwn70hglawso"]
+[gd_scene load_steps=8 format=3 uid="uid://bvwn70hglawso"]
 
 [ext_resource type="PackedScene" uid="uid://dxgtvg6iqn3pw" path="res://player.tscn" id="1_0yohk"]
 [ext_resource type="Script" uid="uid://jq0xt7vn3k6k" path="res://survivor_game.gd" id="1_xbgqq"]
-[ext_resource type="PackedScene" uid="uid://dcogxvx6fvx8g" path="res://tree.tscn" id="2_8vy7s"]
 [ext_resource type="PackedScene" uid="uid://dk222sfdfhqn7" path="res://blob.tscn" id="3_8vy7s"]
 [ext_resource type="Script" uid="uid://dk14644owfwf1" path="res://path_follow_2d.gd" id="5_qktop"]
-[ext_resource type="Script" uid="uid://bmvrh4r8bgua7" path="res://tree.gd" id="6_qktop"]
 
 [sub_resource type="Curve2D" id="Curve2D_j2wmw"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -139, -164, 0, 0, 0, 0, 2040, -150, 0, 0, 0, 0, 2050, 1182, 0, 0, 0, 0, -135, 1169, 0, 0, 0, 0, -139, -164)
 }
 point_count = 5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbgqq"]
-size = Vector2(2367, 1530)
 
 [sub_resource type="FontFile" id="FontFile_xbgqq"]
 cache/0/50/0/ascent = 0.0
@@ -50,14 +45,11 @@ layer = -1
 offset_right = 1950.0
 offset_bottom = 1103.0
 
-[node name="tree" parent="." instance=ExtResource("2_8vy7s")]
-position = Vector2(233, 915)
-script = ExtResource("6_qktop")
-
 [node name="Player" parent="." instance=ExtResource("1_0yohk")]
 position = Vector2(916, 543)
 
 [node name="Path2D" type="Path2D" parent="Player"]
+unique_name_in_owner = true
 position = Vector2(-916, -543)
 curve = SubResource("Curve2D_j2wmw")
 
@@ -66,13 +58,6 @@ unique_name_in_owner = true
 position = Vector2(-139, -164)
 rotation = 0.00642488
 script = ExtResource("5_qktop")
-
-[node name="TreeArea" type="Area2D" parent="Player/Path2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Path2D/TreeArea"]
-unique_name_in_owner = true
-position = Vector2(955.5, 512)
-shape = SubResource("RectangleShape2D_xbgqq")
 
 [node name="blob" parent="." instance=ExtResource("3_8vy7s")]
 position = Vector2(336, 626)
@@ -110,6 +95,7 @@ text = "Game Over"
 label_settings = SubResource("LabelSettings_qktop")
 
 [node name="Tree" type="Timer" parent="."]
+wait_time = 0.3
 autostart = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

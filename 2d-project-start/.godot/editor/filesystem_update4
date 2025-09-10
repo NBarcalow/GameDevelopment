@@ -3,3 +3,4 @@ res://survivor_game.gd
 res://blob.tscn
 res://player.tscn
 res://tree.tscn
+res://tree.gd
