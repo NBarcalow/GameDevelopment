@@ -1,3 +1,4 @@
+ProgressBar
 CollisionShape2D
 CharacterBody2D
 Timer
@@ -8,7 +9,6 @@ ColorRect
 CanvasLayer
 PathFollow2D
 Path2D
-ProgressBar
 Marker2D
 Camera2D
 StaticBody2D

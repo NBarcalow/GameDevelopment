@@ -30,6 +30,7 @@ func _on_player_health_depleted() -> void:
 
 func _on_tree_timeout() -> void:
 	spawn_tree()
+	$Player/gun.ammo += 1
 
 
 func _on_boss_timeout() -> void:

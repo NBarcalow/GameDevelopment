@@ -1,7 +1,9 @@
 extends Area2D
+var closest_enemy
+var ammo = clamp(20, 0, 20)
 
 func _physics_process(delta: float) -> void:
-	var closest_enemy = get_overlapping_bodies()
+	closest_enemy = get_overlapping_bodies()
 	if closest_enemy.size() > 0:
 		var target_enemy = closest_enemy.front()
 		look_at(target_enemy.global_position)
@@ -9,10 +11,12 @@ func _physics_process(delta: float) -> void:
 
 func shoot():
 	const BULLET = preload("res://bullet.tscn")
-	var new_bullet = BULLET.instantiate()
-	new_bullet.global_position = %barrel.global_position
-	new_bullet.global_rotation = %barrel.global_rotation
-	%barrel.add_child(new_bullet)
+	if(closest_enemy && ammo > 0):	
+		var new_bullet = BULLET.instantiate()
+		new_bullet.global_position = %barrel.global_position
+		new_bullet.global_rotation = %barrel.global_rotation
+		%barrel.add_child(new_bullet)
+		ammo -= 1
 
 func _on_timer_timeout() -> void:
 	shoot()

@@ -8,3 +8,5 @@ res://blob.gd
 res://boss_blob.gd
 res://slime_body.gd
 res://boss_blob.gdshader
+res://player.gd
+res://gun.gd
