@@ -36,4 +36,5 @@ Class Assignment: Godot Tutorial shooter game - https://www.youtube.com/watch?v=
 
 9/15 : Brainstormed ideas on what to add-(1hours)
 9/15 : Added Boss Blob at 1 min into play feature(need to add win screen later)-(Hard Gate)(2hours)
-9/16 : Added ammo supply + ammo regen + visual ammo bar-(2hours 10mins)
+9/16 : Added that the player moves slower with more damage taken(adding regen later if time)-(Soft Gate)(35mins)
+9/16 : Added ammo supply + ammo regen + visual ammo bar-(Faucet/Sink)(2hours 10mins)
