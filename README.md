@@ -33,3 +33,7 @@ Class Assignment: Godot Tutorial shooter game - https://www.youtube.com/watch?v=
 9/9 : Research to make += trees now Dissapear when not in frame-(45mins) - https://www.youtube.com/watch?v=JZ71QSfROAs
 9/9 : Set up Github CI(I think)-(35mins)
 9/10 : Finished fixing the CL Pipe problem - it was a pathing issue in the yaml file-(2hours 5mins)
+
+9/15 : Brainstormed ideas on what to add-(1hours)
+9/15 : Added Boss Blob at 1 min into play feature(need to add win screen later)-(Hard Gate)(2hours)
+9/16 : Added ammo supply + ammo regen + visual ammo bar-(2hours 10mins)
