@@ -1,9 +1,10 @@
-ProgressBar
-CollisionShape2D
-CharacterBody2D
-Timer
-VisibleOnScreenNotifier2D
 Area2D
+Sprite2D
+Timer
+CollisionShape2D
+ProgressBar
+CharacterBody2D
+VisibleOnScreenNotifier2D
 Label
 ColorRect
 CanvasLayer
@@ -11,4 +12,3 @@ PathFollow2D
 Path2D
 Marker2D
 Camera2D
-StaticBody2D

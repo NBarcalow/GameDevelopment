@@ -10,3 +10,8 @@ res://slime_body.gd
 res://boss_blob.gdshader
 res://player.gd
 res://gun.gd
+res://tree.gd
+res://Global.gd
+res://bullet.tscn
+res://gun.tscn
+res://bullet_blob.tscn

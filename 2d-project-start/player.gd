@@ -23,3 +23,8 @@ func _physics_process(delta: float) -> void:
 
 	%ammo.value = $gun.ammo
 # Implement some sort of health regen after time later
+func take_damage():
+	health = health - 5
+	%health.value = health
+	if health <= 0.0:
+		health_depleted.emit()

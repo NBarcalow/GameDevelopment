@@ -35,3 +35,8 @@ func _on_tree_timeout() -> void:
 
 func _on_boss_timeout() -> void:
 	spawn_boss_blob()
+
+
+func _on_progression_timeout() -> void:
+	Global.progression = true
+	print("progression")

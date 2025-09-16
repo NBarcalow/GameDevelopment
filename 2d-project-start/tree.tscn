@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcogxvx6fvx8g"]
+[gd_scene load_steps=6 format=3 uid="uid://dcogxvx6fvx8g"]
 
 [ext_resource type="Script" uid="uid://bmvrh4r8bgua7" path="res://tree.gd" id="1_gvmkm"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_nnvrw"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2g23"]
 radius = 19.0263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvmkm"]
+radius = 23.1948
 
 [node name="tree" type="StaticBody2D"]
 script = ExtResource("1_gvmkm")
@@ -26,6 +29,16 @@ shape = SubResource("CircleShape2D_d2g23")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-1, 0)
+
+[node name="BreakBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakBox"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_gvmkm")
+debug_color = Color(0.964332, 0, 0.493394, 0.42)
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -79,6 +79,10 @@ run/main_scene="uid://bvwn70hglawso"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/viewport_width=1920
