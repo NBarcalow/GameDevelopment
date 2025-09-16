@@ -2,3 +2,9 @@ res://Survivor_game.tscn
 res://blob.tscn
 res://player.tscn
 res://tree.tscn
+res://survivor_game.gd
+res://boss_blob.tscn
+res://blob.gd
+res://boss_blob.gd
+res://slime_body.gd
+res://boss_blob.gdshader

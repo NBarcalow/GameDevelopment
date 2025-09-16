@@ -14,9 +14,14 @@ func spawn_tree():
 	new_tree.global_position = %PathFollow2D.global_position
 	add_child(new_tree)
 
+func spawn_boss_blob():
+	var BOSS_BLOB = preload("res://boss_blob.tscn").instantiate()
+	%PathFollow2D.progress_ratio = randf()
+	BOSS_BLOB.global_position = %PathFollow2D.global_position
+	add_child(BOSS_BLOB)
+	
 func _on_timer_timeout() -> void:
 	spawn_blob()
-
 
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
@@ -25,3 +30,7 @@ func _on_player_health_depleted() -> void:
 
 func _on_tree_timeout() -> void:
 	spawn_tree()
+
+
+func _on_boss_timeout() -> void:
+	spawn_boss_blob()

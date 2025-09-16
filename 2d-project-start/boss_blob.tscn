@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3m8opwe1tg46"]
+
+[ext_resource type="Script" uid="uid://cie7wmaxpwffv" path="res://boss_blob.gd" id="1_krskn"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_n4q30"]
+[ext_resource type="Shader" uid="uid://bjhr7llejmamq" path="res://boss_blob.gdshader" id="3_symjx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_symjx"]
+shader = ExtResource("3_symjx")
+shader_parameter/target_color = Color(0.207843, 0.717647, 0.380392, 1)
+shader_parameter/replace_color = Color(0.745098, 0, 0, 1)
+shader_parameter/tolerance = 0.681
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krskn"]
+radius = 54.0
+
+[node name="Boss_Blob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_krskn")
+
+[node name="Slime" parent="." instance=ExtResource("1_n4q30")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_symjx")
+position = Vector2(-1, -29)
+shape = SubResource("CircleShape2D_krskn")
