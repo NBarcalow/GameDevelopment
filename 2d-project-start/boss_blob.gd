@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal died
 var health = 15
 @onready var player = get_node("/root/Game/Player")
 
@@ -18,9 +18,11 @@ func take_damage():
 	%Slime.play_hurt()
 	
 	if health == 0:
+		died.emit()
 		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		#Global.boss = false

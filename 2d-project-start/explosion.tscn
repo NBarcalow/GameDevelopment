@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dks4wiin7koy2"]
+
+[ext_resource type="Script" uid="uid://dsyjxgmvaolp5" path="res://explosion.gd" id="1_q7epf"]
+
+[sub_resource type="Curve" id="Curve_vxas0"]
+_data = [Vector2(0.248619, 1), 0.0, 0.0, 0, 0, Vector2(0.917127, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_q7epf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 0.462745, 0.0392157, 1)
+self_modulate = Color(1, 0.866667, 0.290196, 0.52549)
+emitting = false
+amount = 75
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_vxas0")

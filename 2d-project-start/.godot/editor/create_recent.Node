@@ -1,5 +1,9 @@
-Area2D
+AudioStreamPlayer2D
+AnimatedSprite2D
+AnimationPlayer
 Sprite2D
+CPUParticles2D
+Area2D
 Timer
 CollisionShape2D
 ProgressBar
@@ -8,7 +12,3 @@ VisibleOnScreenNotifier2D
 Label
 ColorRect
 CanvasLayer
-PathFollow2D
-Path2D
-Marker2D
-Camera2D

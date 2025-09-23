@@ -1,6 +1,9 @@
 extends Node2D
 
 func spawn_blob():
+	#if(not Global.boss):
+		#_on_boss_health_depleted()
+		
 	var new_blob = preload("res://blob.tscn").instantiate()
 	
 	%PathFollow2D.progress_ratio = randf()
@@ -16,6 +19,7 @@ func spawn_tree():
 
 func spawn_boss_blob():
 	var BOSS_BLOB = preload("res://boss_blob.tscn").instantiate()
+	BOSS_BLOB.died.connect(_on_boss_died)
 	%PathFollow2D.progress_ratio = randf()
 	BOSS_BLOB.global_position = %PathFollow2D.global_position
 	add_child(BOSS_BLOB)
@@ -27,10 +31,13 @@ func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	get_tree().paused = true
 
+func _on_boss_died() -> void:
+	%GameWin.visible = true
+	get_tree().paused = true
 
 func _on_tree_timeout() -> void:
 	spawn_tree()
-	$Player/gun.ammo += 1
+	$Player/gun.ammo += 0.75
 
 
 func _on_boss_timeout() -> void:

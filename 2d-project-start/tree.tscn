@@ -1,8 +1,133 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcogxvx6fvx8g"]
+[gd_scene load_steps=25 format=3 uid="uid://dcogxvx6fvx8g"]
 
 [ext_resource type="Script" uid="uid://bmvrh4r8bgua7" path="res://tree.gd" id="1_gvmkm"]
 [ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_nnvrw"]
+[ext_resource type="Texture2D" uid="uid://cyehpaygl2aeg" path="res://autumntree/AnimatedAutum.png" id="2_44ud8"]
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://trees/pine_tree.png" id="2_gvmkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vbnm"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcqui"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgygo"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oph6y"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy4hq"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s00bo"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkgly"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkc4b"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl04x"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5e6e"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yp4f"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r7sq"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31wiq"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bid"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spwng"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ga0m"]
+atlas = ExtResource("2_44ud8")
+region = Rect2(960, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufo4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vbnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcqui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgygo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oph6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy4hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s00bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkgly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkc4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl04x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5e6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yp4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r7sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31wiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spwng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ga0m")
+}],
+"loop": true,
+"name": &"sway",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_44ud8"]
+script/source = "extends AnimatedSprite2D
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2g23"]
 radius = 19.0263
@@ -13,13 +138,24 @@ radius = 23.1948
 [node name="tree" type="StaticBody2D"]
 script = ExtResource("1_gvmkm")
 
+[node name="autumntree" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(1, -95)
+scale = Vector2(3.03125, 3.54688)
+sprite_frames = SubResource("SpriteFrames_ufo4u")
+animation = &"sway"
+script = SubResource("GDScript_44ud8")
+
 [node name="GroundShadow" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.325441, 0.325441, 0.325441, 1)
 position = Vector2(0, 4)
 scale = Vector2(1, 0.807692)
 texture = ExtResource("1_nnvrw")
 
 [node name="PineTree" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -64)
 texture = ExtResource("2_gvmkm")
 
