@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://crgyvubrsl2r2"]
+
+[ext_resource type="PackedScene" uid="uid://ctqh3tlp2p1iu" path="res://tilemap.tscn" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://7olpb667xc7o" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bcu2xs8ivp15f" path="res://player.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://sl618jdfpuw6" path="res://panel.gd" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://cr3w8d1m2at6a" path="res://score.gd" id="5_7jktm"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_feb5d")
+point_1 = Vector2(0, 0)
+point_2 = Vector2(525, 400)
+
+[node name="tilemap" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(257, 257)
+
+[node name="player" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(259, 255)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="playing_field" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_right = 513.0
+offset_bottom = 511.0
+
+[node name="Time" type="CanvasLayer" parent="."]
+
+[node name="timer" type="Panel" parent="Time"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 130.0
+offset_bottom = 31.0
+script = ExtResource("4_fc0e3")
+metadata/_edit_use_anchors_ = true
+
+[node name="min" type="Label" parent="Time/timer"]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 25.0
+text = "00:"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="sec" type="Label" parent="Time/timer"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 25.0
+text = "00."
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="msec" type="Label" parent="Time/timer"]
+offset_left = 83.0
+offset_top = 2.0
+offset_right = 123.0
+offset_bottom = 25.0
+text = "0000"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="score" type="Panel" parent="Score"]
+offset_left = 4.0
+offset_top = 32.0
+offset_right = 103.0
+offset_bottom = 54.0
+script = ExtResource("5_7jktm")
+
+[node name="display_score" type="RichTextLabel" parent="Score/score"]
+offset_left = 2.0
+offset_right = 91.0
+offset_bottom = 22.0
+text = "Score:"
+scroll_active = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

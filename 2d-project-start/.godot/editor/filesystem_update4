@@ -1,6 +1,5 @@
-res://boss_blob.gdshader
 res://Survivor_game.tscn
-res://pumpkin/pumpkin.gd
+res://boss_blob.gdshader
 res://player.tscn
 res://tree.tscn
 res://blob.tscn
@@ -9,14 +8,3 @@ res://bullet_blob.tscn
 res://gun.tscn
 res://bullet.tscn
 res://explosion.tscn
-res://pumpkin.tscn
-res://blob.gd
-res://pumpkin.gd
-res://bullet.gd
-res://bullet_blob.gd
-res://boss_blob.gd
-res://survivor_game.gd
-res://Global.gd
-res://gun.gd
-res://animated_sprite_2d.gd
-res://tree.gd

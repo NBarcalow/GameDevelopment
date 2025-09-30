@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcu2xs8ivp15f"]
+
+[ext_resource type="Texture2D" uid="uid://dmdsd1rhto1dm" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://c6nlcqbgacn0j" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 7.0
+height = 26.0
+
+[node name="player" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_onrkg")
+
+[node name="pickupbox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupbox"]
+shape = SubResource("CapsuleShape2D_i3pqv")
+debug_color = Color(0.897515, 0.183563, 0.638124, 0.42)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.101563, 0.179688)
+texture = ExtResource("1_4flbx")
+
+[node name="player_box" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="."]

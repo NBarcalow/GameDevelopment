@@ -54,3 +54,12 @@ Class Assignment: Godot Tutorial shooter game - https://www.youtube.com/watch?v=
 9/22 : Added BGM for the game-(20mins) https://aoha-music.itch.io/title-screen-music  
 9/22 : Added Sounds to the shooting effect-(30mins) https://towball.itch.io/retro-sci-fi  
 9/22 : Added death sounds 'pop' to the blobs-(20mins) https://starsoftware.itch.io/pop-sound  
+
+NEW GAME: Tilemap
+9/28 : Downloaded Assests to use in the creation of this mini-game-(30mins) https://cainos.itch.io/pixel-art-top-down-basic & https://sscary.itch.io/the-adventurer-female  
+9/28 : Created Player and gave it movement-(30mins)  
+9/29 : Created randomly spawning pickups-(1hours 15mins) https://www.youtube.com/watch?v=VxRHTnEonFI&t=80s  
+9/29 : Made it possible for the play to pick up the pickups-(1hours) https://www.youtube.com/watch?v=8rod3hFQBJQ  
+9/29 : Created Timer and Score-(45mins) https://www.youtube.com/shorts/M-0UNa8M5bE  
+9/30 : Setup Tilemaplayers for grass, castle, and plants-(2hours) https://www.youtube.com/watch?v=Z-NT4XOt6V0 & https://www.youtube.com/watch?v=tQSL2scuqeU  
+9/30 : Designed a small level for the player-(45mins)  
