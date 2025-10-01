@@ -37,6 +37,7 @@ script = ExtResource("4_fc0e3")
 metadata/_edit_use_anchors_ = true
 
 [node name="min" type="Label" parent="Time/timer"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 2.0
 offset_right = 43.0
@@ -58,6 +59,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="msec" type="Label" parent="Time/timer"]
+layout_mode = 0
 offset_left = 83.0
 offset_top = 2.0
 offset_right = 123.0
@@ -77,6 +79,7 @@ offset_bottom = 54.0
 script = ExtResource("5_7jktm")
 
 [node name="display_score" type="RichTextLabel" parent="Score/score"]
+layout_mode = 0
 offset_left = 2.0
 offset_right = 91.0
 offset_bottom = 22.0
