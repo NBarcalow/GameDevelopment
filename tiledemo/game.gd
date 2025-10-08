@@ -7,6 +7,10 @@ extends Node2D
 
 var pickup_amount = 0
 
+func _ready() -> void:
+	$fade/AnimationPlayer.play("out")
+
+
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x, p2.x)
 	var y_value: float = randf_range(p1.y, p2.y)

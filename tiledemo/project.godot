@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="tiledemo"
-run/main_scene="uid://crgyvubrsl2r2"
+run/main_scene="uid://cjsk3rpy2cxhi"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom_font="uid://daj8akc3q5mrv"
 
 [input]
 

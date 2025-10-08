@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://crgyvubrsl2r2"]
+[gd_scene load_steps=7 format=3 uid="uid://crgyvubrsl2r2"]
 
 [ext_resource type="PackedScene" uid="uid://ctqh3tlp2p1iu" path="res://tilemap.tscn" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://7olpb667xc7o" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bcu2xs8ivp15f" path="res://player.tscn" id="2_feb5d"]
 [ext_resource type="Script" uid="uid://sl618jdfpuw6" path="res://panel.gd" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://cr3w8d1m2at6a" path="res://score.gd" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://cbqkoowbxyo7q" path="res://fade.tscn" id="6_ryrav"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_feb5d")
@@ -85,5 +86,11 @@ offset_right = 91.0
 offset_bottom = 22.0
 text = "Score:"
 scroll_active = false
+
+[node name="fade" parent="." instance=ExtResource("6_ryrav")]
+offset_left = -328.0
+offset_top = -78.0
+offset_right = 851.0
+offset_bottom = 589.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

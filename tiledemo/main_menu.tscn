@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjsk3rpy2cxhi"]
+
+[ext_resource type="Script" uid="uid://bi2q8a0th5gh6" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://cbqkoowbxyo7q" path="res://fade.tscn" id="2_7vrkn"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_06t4h")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 201.0
+offset_right = 653.0
+offset_bottom = 279.0
+text = "Start"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 287.0
+offset_right = 653.0
+offset_bottom = 364.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 371.0
+offset_right = 652.0
+offset_bottom = 449.0
+text = "Quit"
+
+[node name="fade" parent="." instance=ExtResource("2_7vrkn")]
+visible = false
+offset_left = -18.0
+offset_top = -11.0
+offset_right = 1167.0
+offset_bottom = 658.0
+
+[node name="fade_timer" type="Timer" parent="fade"]
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade/fade_timer" to="." method="_on_fade_timer_timeout"]

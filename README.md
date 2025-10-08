@@ -63,3 +63,13 @@ NEW GAME: Tiledemo
 9/29 : Created Timer and Score-(45mins) https://www.youtube.com/shorts/M-0UNa8M5bE  
 9/30 : Setup Tilemaplayers for grass, castle, and plants-(2hours) https://www.youtube.com/watch?v=Z-NT4XOt6V0 & https://www.youtube.com/watch?v=tQSL2scuqeU  
 9/30 : Designed a small level for the player-(45mins)  
+
+Still new game - Tiledemo
+10/5 : Figma file wireframe for menu flow-(1hours) https://www.figma.com/design/KpNjcwRZUpXR6aVbI1HZZq/UX-UI-Wireframe?node-id=0-1&t=PdhguG8Y9yHlQhfD-1  
+10/6 : Search for Font's online + download-(20mins) https://antijingoist.itch.io/opendyslexic/download/eyJpZCI6MjU4NTk5MSwiZXhwaXJlcyI6MTc1OTg3OTkwOX0%3d.PIDhNgaTHXZ36pF4yNNlEv9ugMs%3d & https://tinyworlds.itch.io/free-pixel-font-thaleah  
+10/6 : Created Opening scene with 3 working buttons-(40mins) https://www.youtube.com/watch?v=AxFKPXko35I  
+10/6 : Created Options page with font-toggle-(3-4hours) https://www.youtube.com/watch?v=Wn4TqRiGuzY : I ended up giving up on this because it was becoming very involved with trying to access the current font-theme and being able to adjust it, the resources I found ended up being for scene specific font changes. I might be able to find a way with more time and research.  
+10/6 : Shifted focus on just using one dyslexic-friendly font-(30mins) https://www.youtube.com/watch?v=mrQAjC_TrXY  
+10/6 : Created some screen fading-(30mins) https://www.youtube.com/watch?v=29jCe-mjyKQ  
+
+
